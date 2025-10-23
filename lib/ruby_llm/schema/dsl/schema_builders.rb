@@ -67,7 +67,7 @@ module RubyLLM
               {
                 type: "object",
                 properties: sub_schema.properties,
-                required: sub_schema.required_properties,
+                required: sub_schema.properties.keys,
                 additionalProperties: sub_schema.additional_properties,
                 description: description
               }.compact
@@ -164,7 +164,7 @@ module RubyLLM
           {
             type: "object",
             properties: schema_class.properties,
-            required: schema_class.required_properties,
+            required: schema_class.properties.keys,
             additionalProperties: schema_class.additional_properties
           }.tap do |schema|
             # For instances, prefer instance description over class description

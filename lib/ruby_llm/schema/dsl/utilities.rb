@@ -12,7 +12,7 @@ module RubyLLM
           definitions[name] = {
             type: "object",
             properties: sub_schema.properties,
-            required: sub_schema.required_properties,
+            required: sub_schema.properties.keys,
             additionalProperties: sub_schema.additional_properties
           }
         end

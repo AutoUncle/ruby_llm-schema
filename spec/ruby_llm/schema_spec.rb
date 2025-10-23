@@ -177,7 +177,7 @@ RSpec.describe RubyLLM::Schema do
           city: {type: "string"},
           zip_code: {type: "integer"}
         },
-        required: %i[street city],
+        required: %i[street city zip_code],
         additionalProperties: false
       )
     end
